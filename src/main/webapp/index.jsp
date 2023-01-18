@@ -45,7 +45,6 @@
 				<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="toyfigure">Log Out</a></li>
 					<li class="nav-item"><a class="nav-link" href="registerfigure.html">Add Figure</a></li>
-					<li class="nav-item"><a class="nav-link" href="registerSoldItems.html">Test</a></li>
 					
 				</ul>
 			</div>

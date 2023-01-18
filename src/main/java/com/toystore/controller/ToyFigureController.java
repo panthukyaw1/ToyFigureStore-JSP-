@@ -70,6 +70,9 @@ public class ToyFigureController extends HttpServlet {
 		case "LOAD":
 			LoadToyFigureById(request, response);
 			break;
+		case "THX":
+			afterBuyToyFigure(request, response);
+			break;
 		case "ADMIN":
 			showToyFigureList(request, response);
 			break;
@@ -93,6 +96,7 @@ public class ToyFigureController extends HttpServlet {
     	RequestDispatcher rd = request.getRequestDispatcher("store.jsp");
     	rd.forward(request, response);
     }
+    
     
     private void LoadToyFigureById(HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException {
     	int id = Integer.parseInt(request.getParameter("id"));
@@ -143,6 +147,14 @@ public class ToyFigureController extends HttpServlet {
     	request.setAttribute("toyfigure", toyFigure);
     	RequestDispatcher rd = request.getRequestDispatcher("buyfigure.jsp");
     	rd.forward(request, response);
+    }
+    private void afterBuyToyFigure(HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException {
+    	int id = Integer.parseInt(request.getParameter("id"));
+    	int rowEffected = this.toyFigureDAO.deleteToyFigure(id);
+    	if(rowEffected > 0 ) {
+    		response.sendRedirect("thankyou.html");
+    	}
+    	
     }
     
     
