@@ -111,8 +111,10 @@ public class ToyFigureController extends HttpServlet {
     	int spareParts = Integer.parseInt(request.getParameter("spareParts"));
     	boolean stand = Boolean.parseBoolean("stand");
     	int price = Integer.parseInt(request.getParameter("price"));
+    	int quantity = Integer.parseInt(request.getParameter("quantity"));
+    	Date stockin = Date.valueOf(request.getParameter("stockin"));
     	
-    	ToyFigure toyFigure = new ToyFigure(name, spareParts, stand, price);
+    	ToyFigure toyFigure = new ToyFigure(name, spareParts, stand, price,quantity,stockin);
     	int rowEffected = this.toyFigureDAO.creatToyFigure(toyFigure);
     	
     	if(rowEffected > 0 ) {
@@ -126,8 +128,10 @@ public class ToyFigureController extends HttpServlet {
     	int spareParts = Integer.parseInt(request.getParameter("spareParts"));
     	boolean stand = Boolean.parseBoolean("stand");
     	int price = Integer.parseInt(request.getParameter("price"));
+    	int quantity = Integer.parseInt(request.getParameter("quantity"));
+    	Date stockin = Date.valueOf(request.getParameter("stockin"));
     	
-    	ToyFigure toyFigure = new ToyFigure(id, name, spareParts, stand, price);
+    	ToyFigure toyFigure = new ToyFigure(id, name, spareParts, stand, price,quantity,stockin);
     	int rowEffected = this.toyFigureDAO.updateToyFigure(toyFigure);
     	if(rowEffected > 0 ) {
     		showToyFigureList(request, response);

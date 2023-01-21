@@ -48,7 +48,9 @@ public class ToyFigureDAO {
 						rs.getString("name"),
 						rs.getInt("spareParts"),
 						rs.getBoolean("stand"),
-						rs.getInt("price")));
+						rs.getInt("price"),
+						rs.getInt("quantity"),
+						rs.getDate("stockin")));
 			}
 	
 		} catch (SQLException e) {
@@ -73,7 +75,9 @@ public class ToyFigureDAO {
 						rs.getString("name"),
 						rs.getInt("spareParts"),
 						rs.getBoolean("stand"),
-						rs.getInt("price"));
+						rs.getInt("price"),
+						rs.getInt("quantity"),
+						rs.getDate("stockin"));
 			}	
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -98,7 +102,9 @@ public class ToyFigureDAO {
 							rs.getString("name"),
 							rs.getInt("spareParts"),
 							rs.getBoolean("stand"),
-							rs.getInt("price")));
+							rs.getInt("price"),
+							rs.getInt("quantity"),
+							rs.getDate("stockin")));
 				}	
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
@@ -127,13 +133,14 @@ public class ToyFigureDAO {
 		int rowEffected = 0;
 		try {
 			connection=dataSource.getConnection();
-			pStmt = connection.prepareStatement("INSERT INTO `toystore` "
-					+ "(`name`, `spareParts`, `stand`, `price`) "
-					+ "VALUES (?, ?, ?, ?);");
+			pStmt = connection.prepareStatement("INSERT INTO `toystore` (`name`, `spareParts`, `stand`, `price`, `quantity`, `stockin`) "
+					+ "VALUES (?, ?, ?, ?, ?, ?);");
 			pStmt.setString(1,toyFigure.getName());
 			pStmt.setInt(2, toyFigure.getSpareParts());
 			pStmt.setBoolean(3, toyFigure.getStand());
 			pStmt.setInt(4, toyFigure.getPrice());
+			pStmt.setInt(5, toyFigure.getQuantity());
+			pStmt.setDate(6, toyFigure.getStockin());
 			
 			rowEffected = pStmt.executeUpdate();
 		} catch (SQLException e) {

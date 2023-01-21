@@ -81,6 +81,14 @@
                 <label for="price" class="form-label">Price </label>
                 <input type="number" value="${toyfigure.price}" id="price" name="price" placeholder="Price" class="form-control">
         </div>
+          <div class="mb-3">
+                <label for="quantity" class="form-label">Quantity </label>
+                <input type="number" value="${toyfigure.quantity}" id="quantity" name="quantity" placeholder="Quantity" class="form-control">
+        </div>
+          <div class="mb-3">
+                <label for="stockin" class="form-label">Stock In </label>
+                <input type="date" value="${toyfigure.stockin}" id="stockin" name="stockin" placeholder="Stock In" class="form-control">
+        </div>
   
         <button type="submit" class="btn btn-primary btn-block">Update</button>
         <button type="reset" class="btn btn-danger btn-block">Cancel</button>

@@ -1,5 +1,7 @@
 package com.hostmdy.model;
 
+import java.sql.Date;
+
 public class ToyFigure {
 
 	private int id;
@@ -7,30 +9,37 @@ public class ToyFigure {
 	private int spareParts;
 	private boolean stand;
 	private int price;
+	private int quantity;
+	private Date stockin;
 	
 	public ToyFigure() {
 		
 	}
-
-
-	public ToyFigure(String name, int spareParts, boolean stand, int price) {
+	public ToyFigure(String name, int spareParts, boolean stand, int price, int quantity, Date stockin) {
 		super();
 		this.name = name;
 		this.spareParts = spareParts;
 		this.stand = stand;
 		this.price = price;
+		this.quantity = quantity;
+		this.stockin = stockin;
 	}
 
 
 
-	public ToyFigure(int id, String name, int spareParts, boolean stand, int price) {
+
+	public ToyFigure(int id, String name, int spareParts, boolean stand, int price, int quantity, Date stockin) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.spareParts = spareParts;
 		this.stand = stand;
 		this.price = price;
+		this.quantity = quantity;
+		this.stockin = stockin;
 	}
+
+
 
 
 	public int getId() {
@@ -77,11 +86,44 @@ public class ToyFigure {
 	}
 
 
+
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+
+
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
+
+
+
+	public Date getStockin() {
+		return stockin;
+	}
+
+
+
+
+	public void setStockin(Date stockin) {
+		this.stockin = stockin;
+	}
+
+
+
+
 	@Override
 	public String toString() {
 		return "ToyFigure [id=" + id + ", name=" + name + ", spareParts=" + spareParts + ", stand=" + stand + ", price="
-				+ price + "]";
+				+ price + ", quantity=" + quantity + ", stockin=" + stockin + "]";
 	}
+
+
+	
 
 
 

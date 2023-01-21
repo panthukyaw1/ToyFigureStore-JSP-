@@ -62,6 +62,8 @@
 					<th>SpareParts</th>
 					<th>Stand</th>
 					<th>Price</th>
+					<th>Quantity</th>
+					<th>Stockin</th>
 					<th>Action</th>
 				</tr>
 			</thead>
@@ -87,6 +89,8 @@
 						    </c:choose>
 						</td>
 						<td> <c:out value="${toyfigure.price }"></c:out> </td>
+						<td> <c:out value="${toyfigure.quantity }"></c:out> </td>
+						<td> <c:out value="${toyfigure.stockin }"></c:out> </td>
 						<td> 
 							<a class="btn btn-primary" href="${buyLink }"> Buy </a>
 						</td>
@@ -100,6 +104,8 @@
 					<th>SpareParts</th>
 					<th>Stand</th>
 					<th>Price</th>
+					<th>Quantity</th>
+					<th>Stockin</th>
 					<th>Action</th>
 				</tr>
 			</tfoot>
