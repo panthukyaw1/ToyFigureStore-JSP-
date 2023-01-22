@@ -26,7 +26,7 @@
 </head>
 <body>
 	<div class="container">
-    	<form action="toyfigure" method="post" class="form-horizontal" role="form">
+    	<form action="toyfigure" method="post" class="form-horizontal" role="form" enctype="multipart/form-data">
         <h2>Registration</h2>
         
         <h3>ID : ${toyfigure.id } </h3>
@@ -89,6 +89,14 @@
                 <label for="stockin" class="form-label">Stock In </label>
                 <input type="date" value="${toyfigure.stockin}" id="stockin" name="stockin" placeholder="Stock In" class="form-control">
         </div>
+        <div class="mb-3">
+				<label for="image" class="form-label">Image</label>
+				<div class="col-sm-9">
+					Choose Image again!
+					<input type="file" value="${toyfigure.img}" id="image" name="image"
+						placeholder="Image" class="form-control" required="required">
+				</div>
+			</div>
   
         <button type="submit" class="btn btn-primary btn-block">Update</button>
         <button type="reset" class="btn btn-danger btn-block">Cancel</button>

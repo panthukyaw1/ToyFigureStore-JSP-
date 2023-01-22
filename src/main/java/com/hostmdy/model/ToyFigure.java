@@ -11,11 +11,17 @@ public class ToyFigure {
 	private int price;
 	private int quantity;
 	private Date stockin;
+	private String img;
 	
 	public ToyFigure() {
 		
 	}
-	public ToyFigure(String name, int spareParts, boolean stand, int price, int quantity, Date stockin) {
+
+
+
+
+
+	public ToyFigure(String name, int spareParts, boolean stand, int price, int quantity, Date stockin, String img) {
 		super();
 		this.name = name;
 		this.spareParts = spareParts;
@@ -23,12 +29,15 @@ public class ToyFigure {
 		this.price = price;
 		this.quantity = quantity;
 		this.stockin = stockin;
+		this.img = img;
 	}
 
 
 
 
-	public ToyFigure(int id, String name, int spareParts, boolean stand, int price, int quantity, Date stockin) {
+
+	public ToyFigure(int id, String name, int spareParts, boolean stand, int price, int quantity, Date stockin,
+			String img) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -37,7 +46,9 @@ public class ToyFigure {
 		this.price = price;
 		this.quantity = quantity;
 		this.stockin = stockin;
+		this.img = img;
 	}
+
 
 
 
@@ -85,8 +96,13 @@ public class ToyFigure {
 		this.price = price;
 	}
 
+	public String getImg() {
+		return img;
+	}
 
-
+	public void setImg(String img) {
+		this.img = img;
+	}
 
 	public int getQuantity() {
 		return quantity;
@@ -100,13 +116,9 @@ public class ToyFigure {
 	}
 
 
-
-
 	public Date getStockin() {
 		return stockin;
 	}
-
-
 
 
 	public void setStockin(Date stockin) {
@@ -115,19 +127,12 @@ public class ToyFigure {
 
 
 
-
 	@Override
 	public String toString() {
 		return "ToyFigure [id=" + id + ", name=" + name + ", spareParts=" + spareParts + ", stand=" + stand + ", price="
-				+ price + ", quantity=" + quantity + ", stockin=" + stockin + "]";
+				+ price + ", quantity=" + quantity + ", stockin=" + stockin + ", img=" + img + "]";
 	}
 
 
-	
-
-
-
-	
-	
 	
 }

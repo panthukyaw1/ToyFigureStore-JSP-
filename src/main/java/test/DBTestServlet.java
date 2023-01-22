@@ -56,7 +56,8 @@ public class DBTestServlet extends HttpServlet {
 						rs.getBoolean("stand"),
 						rs.getInt("price"),
 						rs.getInt("quantity"),
-						rs.getDate("stockin")
+						rs.getDate("stockin"),
+						rs.getString("img")
 						);
 				out.print(toyFigure+"\n");
 			}

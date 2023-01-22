@@ -50,7 +50,8 @@ public class ToyFigureDAO {
 						rs.getBoolean("stand"),
 						rs.getInt("price"),
 						rs.getInt("quantity"),
-						rs.getDate("stockin")));
+						rs.getDate("stockin"),
+						rs.getString("img")));
 			}
 	
 		} catch (SQLException e) {
@@ -77,7 +78,8 @@ public class ToyFigureDAO {
 						rs.getBoolean("stand"),
 						rs.getInt("price"),
 						rs.getInt("quantity"),
-						rs.getDate("stockin"));
+						rs.getDate("stockin"),
+						rs.getString("img"));
 			}	
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -104,7 +106,8 @@ public class ToyFigureDAO {
 							rs.getBoolean("stand"),
 							rs.getInt("price"),
 							rs.getInt("quantity"),
-							rs.getDate("stockin")));
+							rs.getDate("stockin"),
+							rs.getString("img")));
 				}	
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
@@ -133,14 +136,15 @@ public class ToyFigureDAO {
 		int rowEffected = 0;
 		try {
 			connection=dataSource.getConnection();
-			pStmt = connection.prepareStatement("INSERT INTO `toystore` (`name`, `spareParts`, `stand`, `price`, `quantity`, `stockin`) "
-					+ "VALUES (?, ?, ?, ?, ?, ?);");
+			pStmt = connection.prepareStatement("INSERT INTO `toystore` (`name`, `spareParts`, `stand`, `price`, `quantity`, `stockin`, `img`)"
+					+ " VALUES (?, ?, ?, ?, ?, ?, ?);");
 			pStmt.setString(1,toyFigure.getName());
 			pStmt.setInt(2, toyFigure.getSpareParts());
 			pStmt.setBoolean(3, toyFigure.getStand());
 			pStmt.setInt(4, toyFigure.getPrice());
 			pStmt.setInt(5, toyFigure.getQuantity());
 			pStmt.setDate(6, toyFigure.getStockin());
+			pStmt.setString(7, toyFigure.getImg());
 			
 			rowEffected = pStmt.executeUpdate();
 		} catch (SQLException e) {
@@ -157,15 +161,21 @@ public class ToyFigureDAO {
 		try {
 			connection= dataSource.getConnection();
 			pStmt = connection.prepareStatement("UPDATE `toystore` SET "
-					+ "`name` = ?,"
+					+ " `name` = ?,"
 					+ " `spareParts` = ?,"
 					+ " `stand` = ?,"
-					+ " `price` = ? WHERE (`id` = ?);");
+					+ " `price` = ?,"
+					+ " `quantity` = ?,"
+					+ " `stockin` = ?,"
+					+ " `img` = ? WHERE (`id` = ?);");
 			pStmt.setString(1,toyFigure.getName());
 			pStmt.setInt(2, toyFigure.getSpareParts());
 			pStmt.setBoolean(3, toyFigure.getStand());
 			pStmt.setInt(4, toyFigure.getPrice());
-			pStmt.setInt(5, toyFigure.getId());
+			pStmt.setInt(5, toyFigure.getQuantity());
+			pStmt.setDate(6, toyFigure.getStockin());
+			pStmt.setString(7, toyFigure.getImg());
+			pStmt.setInt(8, toyFigure.getId());
 			rowEffected = pStmt.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

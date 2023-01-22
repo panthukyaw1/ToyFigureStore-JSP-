@@ -58,6 +58,7 @@
 			<thead>
 				<tr>
 					<th>ID</th>
+					<th>Image</th>
 					<th>Name</th>
 					<th>SpareParts</th>
 					<th>Stand</th>
@@ -76,6 +77,7 @@
 					
 					<tr>
 						<td> <c:out value="${toyfigure.id }"></c:out> </td>
+						<td><img alt="" src="${toyfigure.img }" width="100px" height="100px"></td>
 						<td> <c:out value="${toyfigure.name }"></c:out> </td>
 						<td> <c:out value="${toyfigure.spareParts }"></c:out> </td>
 						<td> 
@@ -100,6 +102,7 @@
 			<tfoot>
 				<tr>
 					<th>ID</th>
+					<th>Image</th>
 					<th>Name</th>
 					<th>SpareParts</th>
 					<th>Stand</th>
